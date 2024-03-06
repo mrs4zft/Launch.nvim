@@ -75,7 +75,7 @@ function M.config()
       },
       -- Accept currently selected item. If none selected, `select` first item.
       -- Set `select` to `false` to only confirm explicitly selected items.
-      ["<CR>"] = cmp.mapping.confirm { select = true },
+      ["<CR>"] = cmp.mapping.confirm { select = false },
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
@@ -134,15 +134,14 @@ function M.config()
       end,
     },
     sources = {
---      { name = "copilot" },
       { name = "nvim_lsp" },
       { name = "luasnip" },
       { name = "cmp_tabnine" },
       { name = "nvim_lua" },
+      { name = "neorg"},
       { name = "buffer" },
       { name = "path" },
       { name = "calc" },
-      { name = "emoji" },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
