@@ -1,10 +1,10 @@
 local M = {
-  "nvim-tree/nvim-web-devicons",
+  "sindrets/diffview.nvim",
   event = "VeryLazy",
 }
 
 function M.config()
-  require "nvim-web-devicons"
+  require("diffview").setup({})
 end
 
 return M

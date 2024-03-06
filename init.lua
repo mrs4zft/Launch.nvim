@@ -47,6 +47,8 @@ spec "user.toggleterm"
 spec "user.gitsigns"
 spec "user.neogit"
 spec "user.project"
+spec "user.diffview"
+-- spec "user.fugitive"
 
 -- note taking
 spec "user.neorg"
