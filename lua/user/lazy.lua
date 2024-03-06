@@ -1,4 +1,4 @@
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim" -- String concatenation with standard path of the nvim dat folder + that lazy bit
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     "git",
@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup {
-  spec = LAZY_PLUGIN_SPEC,
+  spec = LAZY_PLUGIN_SPEC, -- All of the lazy specs come with the custom global variable defined in user.launch
   install = {
     colorscheme = { "darkplus", "default" },
   },

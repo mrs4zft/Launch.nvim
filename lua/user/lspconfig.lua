@@ -1,6 +1,6 @@
 local M = {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPre", "BufNewFile" }, -- what needs to happen that the plugin gets loaded
   dependencies = {
     {
       "folke/neodev.nvim",
@@ -38,6 +38,7 @@ M.toggle_inlay_hints = function()
   vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
 end
 
+-- The following keybind defs get attached with a langserver on a buffer 
 function M.config()
   local wk = require "which-key"
   wk.register {
@@ -79,6 +80,7 @@ function M.config()
   }
 
   local default_diagnostic_config = {
+    -- The following bit adds icons to the gutter to mark problems in the code.
     signs = {
       active = true,
       values = {
@@ -112,6 +114,7 @@ function M.config()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
   require("lspconfig.ui.windows").default_options.border = "rounded"
 
+  -- This loop over all servers allows a fine grained controll over them; examples below
   for _, server in pairs(servers) do
     local opts = {
       on_attach = M.on_attach,
