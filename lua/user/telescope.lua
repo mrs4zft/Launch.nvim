@@ -1,6 +1,10 @@
 local M = {
   "nvim-telescope/telescope.nvim",
-  dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true } },
+  event = "VimEnter",
+  dependencies = {
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
+    { 'nvim-telescope/telescope-ui-select.nvim' },
+  },
 }
 
 function M.config()
@@ -15,6 +19,11 @@ function M.config()
     ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
     ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
     ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    ["<leader>fe"] = { "<cmd>Telescope file_browser<cr>", "File Explorer" },
+    ["<leader>fk"] = { "<cmd>Telescope keymaps<cr>", "Search help" },
+    ["<leader>fn"] = { function()
+      require 'telescope.builtin'.find_files { cwd = vim.fn.stdpath 'config' }
+    end, "Search Neovim config files" },
   }
 
   local icons = require "user.icons"
@@ -69,7 +78,7 @@ function M.config()
 
       find_files = {
         theme = "dropdown",
-        previewer = false,
+        previewer = true,
       },
 
       buffers = {
@@ -122,8 +131,13 @@ function M.config()
         override_file_sorter = true, -- override the file sorter
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
+      ['ui-select'] = {
+        require('telescope.themes').get_dropdown(),
+      },
     },
   }
+  pcall(require('telescope').load_extension, 'fzf')
+  pcall(require('telescope').load_extension, 'ui-select')
 end
 
 return M

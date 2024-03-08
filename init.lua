@@ -17,6 +17,7 @@ spec "user.schemastore"
 spec "user.lspconfig"
 spec "user.none-ls"
 spec "user.neotest"
+spec "user.extras.trouble"
 
 -- Completion
 spec "user.cmp"

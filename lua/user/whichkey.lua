@@ -5,7 +5,6 @@ local M = {
 function M.config()
   local mappings = {
     q = { "<cmd>confirm q<CR>", "Quit" },
-    h = { "<cmd>nohlsearch<CR>", "NOHL" },
     [";"] = { "<cmd>tabnew | terminal<CR>", "Term" },
     v = { "<cmd>vsplit<CR>", "Split" },
     b = { name = "Buffers" },
@@ -41,8 +40,8 @@ function M.config()
         text_objects = false,
         windows = false,
         nav = false,
-        z = false,
-        g = false,
+        z = true,
+        g = true,
       },
     },
     window = {
@@ -50,9 +49,9 @@ function M.config()
       position = "bottom",
       padding = { 2, 2, 2, 2 },
     },
-    ignore_missing = true,
-    show_help = false,
-    show_keys = false,
+    ignore_missing = false,
+    show_help = true,
+    show_keys = true,
     disable = {
       buftypes = {},
       filetypes = { "TelescopePrompt" },

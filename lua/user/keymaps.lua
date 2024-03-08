@@ -3,16 +3,15 @@ local opts = { noremap = true, silent = true }
 
 keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 keymap("n", "<C-i>", "<C-i>", opts)
-
+keymap("n", "<ESC>", "<cmd>nohlsearch<CR>") -- Remove search highlights through ESC
 -- Better window navigation
-keymap("n", "<m-h>", "<C-w>h", opts)
-keymap("n", "<m-j>", "<C-w>j", opts)
-keymap("n", "<m-k>", "<C-w>k", opts)
-keymap("n", "<m-l>", "<C-w>l", opts)
-keymap("n", "<m-tab>", "<c-6>", opts)
+keymap("n", "ª", "<C-w>h", opts) -- Alt h
+keymap("n", "º", "<C-w>j", opts) -- Alt j
+keymap("n", "∆", "<C-w>k", opts) -- Alt k
+--keymap("n", "@", "<C-w>l", opts) -- Alt l
 
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
@@ -31,8 +30,14 @@ vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definiti
 vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
 -- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
 
-vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
-vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
+keymap("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
+keymap("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
+
+-- Diagnostic keymaps
+keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+keymap('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- more good
 keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
@@ -41,7 +46,8 @@ keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
 -- tailwind bearable to work with
 keymap({ "n", "x" }, "j", "gj", opts)
 keymap({ "n", "x" }, "k", "gk", opts)
-keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
+-- Toggle line wrap
+keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
