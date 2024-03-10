@@ -23,7 +23,7 @@ function M.config()
       end, opts)
 
       -- rebase always
-      opts.desc = 'Git pull rebase'
+      opts.desc = 'Git pull with rebase'
       vim.keymap.set("n", "<leader>P", function()
         vim.cmd.Git({ 'pull', '--rebase' })
       end, opts)

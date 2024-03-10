@@ -14,14 +14,14 @@ function M.config()
     l = { name = "LSP" },
     p = { name = "Plugins" },
     t = { name = "Test" },
-    a = {
-      name = "Tab",
-      n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
-      N = { "<cmd>tabnew %<cr>", "New Tab" },
-      o = { "<cmd>tabonly<cr>", "Only" },
-      h = { "<cmd>-tabmove<cr>", "Move Left" },
-      l = { "<cmd>+tabmove<cr>", "Move Right" },
-    },
+    -- a = {
+    --   name = "Tab",
+    --   n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
+    --   N = { "<cmd>tabnew %<cr>", "New Tab" },
+    --   o = { "<cmd>tabonly<cr>", "Only" },
+    --   h = { "<cmd>-tabmove<cr>", "Move Left" },
+    --   l = { "<cmd>+tabmove<cr>", "Move Right" },
+    -- },
     T = { name = "Treesitter" },
   }
 
@@ -48,6 +48,11 @@ function M.config()
       border = "rounded",
       position = "bottom",
       padding = { 2, 2, 2, 2 },
+    },
+    icons = {
+      breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+      separator = ":", -- symbol used between a key and it's label
+      group = "+", -- symbol prepended to a group
     },
     ignore_missing = false,
     show_help = true,

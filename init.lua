@@ -54,4 +54,9 @@ spec "user.fugitive"
 -- note taking
 spec "user.neorg"
 
+-- mini
+---- mini.ai better a and i commands
+---- mini.surround surrounding objects with characters
+spec "user.mini"
+
 require "user.lazy"

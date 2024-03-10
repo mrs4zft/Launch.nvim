@@ -24,15 +24,6 @@ keymap("n", "g#", "g#zz", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
-keymap("x", "p", [["_dP]])
-
-vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
-vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
--- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
-
-keymap("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
-keymap("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
-
 -- Diagnostic keymaps
 keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -51,3 +42,30 @@ keymap({ "n", "x" }, "k", "gk", opts)
 keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
+
+-- Move highlighted text up and down and indent properly
+keymap("v", "J", ":m '>+1<CR>gv=gv")
+keymap("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Leave cursor where it is when joining lines
+keymap("n", "J", "mzJ`z")
+
+-- Stay centered on moving
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
+
+-- In visual mode, replace selection without yanking
+keymap("x", "<leader>p", [["_dP]], { desc = "Paste without yank" })
+
+keymap({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yank" })
+
+keymap("n", "Q", "<nop>")
+
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "Change word under cursor" })
+
+-- Remap for dealing with word wrap
+keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
