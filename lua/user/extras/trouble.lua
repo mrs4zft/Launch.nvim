@@ -19,6 +19,8 @@ function M.config()
     ["<leader>dq"] = {function() require("trouble").toggle("quickfix") end, 'Trouble quickfix'},
     ["<leader>dl"] = {function() require("trouble").toggle("loclist") end, 'Loclist'},
     ["<leader>dR"] = {function() require("trouble").toggle("lsp_references") end, 'LSP references'},
+    ["<leader>["] = {function() require("trouble").next({skip_groups = true, jump = true}) end, 'Next trouble'},
+    ["<leader>]"] = {function() require("trouble").previous({skip_groups = true, jump = true}) end, 'Previous trouble'},
   })
 end
 

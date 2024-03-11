@@ -5,6 +5,12 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+keymap("n", "ö", "[", opts)
+keymap("n", "ä", "]", opts)
+keymap("n", "Ö", "{", opts)
+keymap("n", "Ä", "}", opts)
+keymap("n", "ü", "@", opts)
+
 keymap("n", "<C-i>", "<C-i>", opts)
 keymap("n", "<ESC>", "<cmd>nohlsearch<CR>") -- Remove search highlights through ESC
 -- Better window navigation
@@ -25,9 +31,9 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Diagnostic keymaps
-keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-keymap('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+-- keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+-- keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+keymap('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- more good
