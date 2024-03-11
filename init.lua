@@ -59,4 +59,12 @@ spec "user.neorg"
 ---- mini.surround surrounding objects with characters
 spec "user.mini"
 
+-- python
+spec "user.black"
+spec "user.nvim-dap-ui"
+spec "user.nvim-dap-python"
+spec "user.vim-isort"
+spec "user.nvim-lint"
+spec "user.nvim-dap-virtual-text"
+
 require "user.lazy"

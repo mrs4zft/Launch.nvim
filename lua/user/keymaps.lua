@@ -5,6 +5,12 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+keymap("n", "ö", "[", opts)
+keymap("n", "ä", "]", opts)
+keymap("n", "Ö", "{", opts)
+keymap("n", "Ä", "}", opts)
+keymap("n", "ü", "@", opts)
+
 keymap("n", "<C-i>", "<C-i>", opts)
 
  -- Remove search highlights through ESC
@@ -28,10 +34,10 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Diagnostic keymaps
-keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous Diagnostic message' })
-keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next Diagnostic message' })
-keymap('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
-keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic Quickfix list' })
+-- keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+-- keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+keymap('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- more good
 keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
