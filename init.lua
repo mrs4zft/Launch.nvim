@@ -11,13 +11,14 @@ spec "user.devicons"
 spec "user.treesitter"
 spec "user.illuminate"
 
----- Lsp related
+---- Lsp/Code related
 spec "user.mason"
 spec "user.schemastore"
 spec "user.lspconfig"
 spec "user.none-ls"
 spec "user.neotest"
 spec "user.extras.trouble"
+spec "user.extras.navbuddy"
 
 -- Completion
 spec "user.cmp"
@@ -45,6 +46,7 @@ spec "user.indentline"
 spec "user.toggleterm"
 spec "user.extras.fidget"
 spec "user.extras.cellular-automaton"
+spec "user.extras.bqf"
 
 -- git
 spec "user.gitsigns"
