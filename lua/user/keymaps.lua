@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 keymap("n", "ö", "[", opts)
-keymap("n", "ä", "]", opts)
+keymap("n", "<C-ä>", "<C-]>", opts)
 keymap("n", "Ö", "{", opts)
 keymap("n", "Ä", "}", opts)
 keymap("n", "ü", "@", opts)

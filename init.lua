@@ -6,7 +6,7 @@ require "user.autocmds"
 
 -- Plugins
 ---- Coloring Highlighting
-spec "user.colorscheme"
+spec "user.colorschemes.rosepine"
 spec "user.devicons"
 spec "user.treesitter"
 spec "user.illuminate"
@@ -43,6 +43,8 @@ spec "user.lualine"
 spec "user.alpha"
 spec "user.indentline"
 spec "user.toggleterm"
+spec "user.extras.fidget"
+spec "user.extras.cellular-automaton"
 
 -- git
 spec "user.gitsigns"
