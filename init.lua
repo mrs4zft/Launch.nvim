@@ -45,7 +45,6 @@ spec "user.alpha"
 spec "user.indentline"
 spec "user.toggleterm"
 spec "user.extras.fidget"
-spec "user.extras.cellular-automaton"
 spec "user.extras.bqf"
 
 -- git
