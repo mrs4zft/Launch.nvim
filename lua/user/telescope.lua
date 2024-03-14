@@ -28,7 +28,7 @@ function M.config()
 
   local icons = require "user.icons"
   local actions = require "telescope.actions"
-
+  local trouble = require("trouble.providers.telescope")
 
   require("telescope").setup {
     defaults = {
@@ -58,12 +58,16 @@ function M.config()
 
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous,
+
+          ["<C-t>"] = trouble.open_with_trouble,
         },
         n = {
           ["<esc>"] = actions.close,
           ["j"] = actions.move_selection_next,
           ["k"] = actions.move_selection_previous,
           ["q"] = actions.close,
+
+          ["<C-t>"] = trouble.open_with_trouble,
         },
       },
     },

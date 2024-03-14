@@ -5,11 +5,11 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-keymap("n", "ö", "[")
-keymap("n", "ä", "]")
-keymap("n", "Ö", "{")
-keymap("n", "Ä", "}")
-keymap("n", "ü", "@")
+keymap("n", "ö", "[", opts)
+keymap("n", "<C-ä>", "<C-]>", opts)
+keymap("n", "Ö", "{", opts)
+keymap("n", "Ä", "}", opts)
+keymap("n", "ü", "@", opts)
 
 keymap("n", "<C-i>", "<C-i>", opts)
 
