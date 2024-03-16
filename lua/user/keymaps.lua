@@ -49,7 +49,7 @@ keymap({ "n", "x" }, "k", "gk", opts)
 
 -- Toggle line wrap
 opts.desc = "Toggle line wrap"
-keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
+keymap("n", "<leader>W", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 opts.desc = nil
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)

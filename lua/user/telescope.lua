@@ -4,6 +4,7 @@ local M = {
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
     { 'nvim-telescope/telescope-ui-select.nvim' },
+    {'joaomsa/telescope-orgmode.nvim'},
   },
 }
 
@@ -142,6 +143,8 @@ function M.config()
   }
   pcall(require('telescope').load_extension, 'fzf')
   pcall(require('telescope').load_extension, 'ui-select')
+  -- Setup telescope extension
+  pcall(require('telescope').load_extension, 'orgmode')
 end
 
 return M

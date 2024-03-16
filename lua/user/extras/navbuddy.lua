@@ -9,7 +9,7 @@ local M = {
 function M.config()
   local wk = require "which-key"
   wk.register {
-    ["<leader>o"] = { "<cmd>Navbuddy<cr>", "Nav" },
+    ["<leader>N"] = { "<cmd>Navbuddy<cr>", "Navbuddy" },
   }
 
   local navbuddy = require "nvim-navbuddy"

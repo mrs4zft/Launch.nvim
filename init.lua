@@ -47,15 +47,17 @@ spec "user.toggleterm"
 spec "user.extras.fidget"
 spec "user.extras.bqf"
 
--- git
+-- git & file history
 spec "user.gitsigns"
 spec "user.neogit"
 spec "user.project"
 spec "user.diffview"
 spec "user.fugitive"
+spec "user.extras.undotree"
 
 -- note taking
 spec "user.neorg"
+spec "user.extras.orgmode"
 
 -- mini
 ---- mini.ai better a and i commands
