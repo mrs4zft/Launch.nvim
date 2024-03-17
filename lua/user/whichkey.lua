@@ -11,9 +11,11 @@ function M.config()
     f = { name = "Find" },
     g = { name = "Git" },
     l = { name = "LSP" },
-    p = { name = "Plugins" },
     t = { name = "Test" },
+    o = { name = "Orgmode"},
+    w = { name = "OrgWiki"},
     -- a = {
+
     --   name = "Tab",
     --   n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
     --   N = { "<cmd>tabnew %<cr>", "New Tab" },
