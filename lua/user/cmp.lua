@@ -136,6 +136,7 @@ function M.config()
     sources = {
       { name = "nvim_lsp" },
       { name = "luasnip" },
+      { name = 'orgmode' },
       { name = "cmp_tabnine" },
       { name = "nvim_lua" },
       { name = "neorg"},

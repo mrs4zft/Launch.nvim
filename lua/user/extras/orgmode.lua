@@ -25,6 +25,8 @@ function M.config()
     end,
   })
 
+  vim.keymap.set('n', '<leader>oo', '<cmd>e ~/org/refile.org<CR>', { desc = 'Open refile.org'})
+
   -- Load treesitter grammar for org
   require('orgmode').setup_ts_grammar()
 
@@ -35,12 +37,7 @@ function M.config()
     },
     ensure_installed = { 'org' },
   })
-  -- Setup completion
-  require('cmp').setup({
-    sources = {
-      { name = 'orgmode' }
-    }
-  })
+
   -- Org wiki
   require("orgWiki").setup {
                 wiki_path = { "~/org/wiki/" },
@@ -65,6 +62,7 @@ function M.config()
   -- Setup orgmode
   require('orgmode').setup({
     org_agenda_files = '~/org/**/*',
+    org_archive_file = '~/org/archive/2024archive.org',
     org_default_notes_file = '~/org/refile.org',
     -- mappings = {
     --   org_return_uses_meta_return = true
@@ -75,6 +73,11 @@ function M.config()
         description = "Repo",
         template = "* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?",
         target = "~/org/repos.org",
+      },
+      p = {
+        description = "Positivtagebuch",
+        template = "* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?",
+        target = "~/org/positiv.org",
       }
     }
   })
