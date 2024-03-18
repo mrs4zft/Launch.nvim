@@ -17,8 +17,8 @@ spec "user.schemastore"
 spec "user.lspconfig"
 spec "user.none-ls"
 spec "user.neotest"
-spec "user.extras.trouble"
-spec "user.extras.navbuddy"
+spec "user.trouble"
+spec "user.navbuddy"
 
 -- Completion
 spec "user.cmp"
@@ -44,8 +44,8 @@ spec "user.lualine"
 spec "user.alpha"
 spec "user.indentline"
 spec "user.toggleterm"
-spec "user.extras.fidget"
-spec "user.extras.bqf"
+spec "user.fidget"
+spec "user.bqf"
 
 -- git & file history
 spec "user.gitsigns"
@@ -53,11 +53,11 @@ spec "user.neogit"
 spec "user.project"
 spec "user.diffview"
 spec "user.fugitive"
-spec "user.extras.undotree"
+spec "user.undotree"
 
 -- note taking
 spec "user.neorg"
-spec "user.extras.orgmode"
+spec "user.orgmode"
 
 -- mini
 ---- mini.ai better a and i commands

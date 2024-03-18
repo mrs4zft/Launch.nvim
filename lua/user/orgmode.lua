@@ -76,7 +76,7 @@ function M.config()
       },
       p = {
         description = "Positivtagebuch",
-        template = "* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?",
+        template = "* :today:",
         target = "~/org/positiv.org",
       }
     }
