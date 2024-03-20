@@ -36,7 +36,6 @@ spec "user.navic"
 spec "user.breadcrumbs"
 spec "user.harpoon"
 spec "user.oil"
-spec "user.neoscroll"
 spec "user.ufo"
 
 -- UI

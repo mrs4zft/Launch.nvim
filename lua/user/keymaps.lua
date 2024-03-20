@@ -17,7 +17,11 @@ keymap("n", "<C-i>", "<C-i>", opts)
 keymap("n", "<ESC>", "<cmd>nohlsearch<CR>")
 
 -- Better window navigation
-keymap("n", "<M-j>", "<C-w>w", opts) -- Alt j
+keymap("n", "<M-j>", "<C-w>w", {noremap = true, silent = true, desc = "Next Window"}) -- Alt j
+
+-- Buffer related
+keymap("n", "<leader>bn", "<cmd>bnext<CR>",{noremap = true, silent = true, desc = "Next Buffer"})
+keymap("n", "<leader>bp", "<cmd>bprev<CR>",{noremap = true, silent = true, desc = "Previous Buffer"})
 
 -- Stay centered on moving
 keymap("n", "<C-d>", "<C-d>zz", opts)

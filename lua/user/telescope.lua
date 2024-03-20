@@ -22,6 +22,8 @@ function M.config()
     ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
     ["<leader>fe"] = { "<cmd>Telescope file_browser<cr>", "File Explorer" },
     ["<leader>fk"] = { "<cmd>Telescope keymaps<cr>", "Search help" },
+    ["<leader>foo"] = { "<cmd>Telescope orgmode search_headings<CR>", "Open Orgfile via Heading" },
+    ["<leader>for"] = { "<cmd>Telescope orgmode refile_heading<CR>", "Refile Org heading" },
     ["<leader>fn"] = { function()
       require 'telescope.builtin'.find_files { cwd = vim.fn.stdpath 'config' }
     end, "Search Neovim config files" },
