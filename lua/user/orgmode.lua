@@ -5,10 +5,6 @@ local M = {
     { "ranjithshegde/orgWiki.nvim" },
     { "akinsho/org-bullets.nvim" },
     { "dhruvasagar/vim-table-mode" },
-    {
-      "lukas-reineke/headlines.nvim",
-      config = true, -- or `opts = {}`
-    },
   },
   event = "VeryLazy",
 }
@@ -18,7 +14,7 @@ function M.config()
   vim.api.nvim_create_autocmd("FileType", {
     pattern = "org",
     callback = function()
-      vim.keymap.set("i", "<S-CR>", '<cmd>lua require("orgmode").action("org_mappings.meta_return")<CR>', {
+      vim.keymap.set("i", "<M-CR>", '<cmd>lua require("orgmode").action("org_mappings.meta_return")<CR>', {
         silent = true,
         buffer = true,
       })
@@ -53,7 +49,7 @@ function M.config()
       headlines = { "◉", "○", "✸", "✿" },
       -- or false to disable the symbol. Works for all symbols
       checkboxes = {
-        half = { "", "OrgTSCheckboxHalfChecked" },
+        half = { "󰦖", "OrgTSCheckboxHalfChecked" },
         done = { "✓", "OrgDone" },
         todo = { " ", "OrgTODO" },
       },
