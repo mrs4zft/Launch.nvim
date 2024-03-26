@@ -71,4 +71,7 @@ spec "user.vim-isort"
 spec "user.nvim-lint"
 spec "user.nvim-dap-virtual-text"
 
+-- Learn Vim
+spec "user.extras.vimbegood"
+
 require "user.lazy"
